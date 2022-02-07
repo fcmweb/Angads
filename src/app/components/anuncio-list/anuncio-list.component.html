@@ -1,0 +1,15 @@
+<div class="col-md-4" *ngFor="let anuncio of anuncios">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{ anuncio.title }}
+            <button class="btn btn-danger" (click)="deleteAnuncio(anuncio.id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <img [src]="anuncio.image" class="card-img-top">
+        <div class="card-body">
+            <p>{{ anuncio.description }}</p>
+            <a [routerLink]="['/anuncios/edit/', anuncio.id]" class="btn btn-info btn-block">Editar</a>
+        </div>
+    </div>
+</div>
